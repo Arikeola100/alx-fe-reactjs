@@ -23,7 +23,7 @@ function App() {
       <Footer />
       </div>
       <div>
-      <UserProfile name = "Blessing Ajayi" age = "25" Bio = "loves reading and outdoor camping." />
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
       </div>
     </>
   )
