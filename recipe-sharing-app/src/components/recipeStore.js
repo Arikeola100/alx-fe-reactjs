@@ -4,7 +4,6 @@ const useRecipeStore = create((set) => ({
   recipes: [],
   addRecipe: (newRecipe) =>
     set((state) => ({ recipes: [...state.recipes, newRecipe] })),
-    setRecipes: (recipes) => set({ recipes }),
   deleteRecipe: (recipeId) =>
     set((state) => ({
       recipes: state.recipes.filter((recipe) => recipe.id !== recipeId),
@@ -41,6 +40,9 @@ const useRecipeStore = create((set) => ({
       );
       return { recommendations: recommended };
     }),
-}));
+    setRecipes: (recipes) => set({ recipes })
+  }));
+
+
 
 export {useRecipeStore};
