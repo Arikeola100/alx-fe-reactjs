@@ -21,6 +21,16 @@ export default function Homepage() {
                             <h2 className="text-gray-900 text-xl font-semibold mt-2 hover:text-green-600">{recipe.title}</h2>
                             <p className="text-gray-600">{recipe.summary}</p>
                         </Link>
+
+            {/* Add Recipe Button */}
+            <div className="mb-6">
+                <Link to="/add-recipe">
+                    <button className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition duration-200">
+                        Add New Recipe
+                    </button>
+                </Link>
+            </div>
+                        
                     </div>
                 ))}
             </div>
