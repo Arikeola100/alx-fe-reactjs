@@ -8,11 +8,12 @@ import './App.css'
  function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/recipe/:id" element={<RecipeDetail />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/recipe/:id" element={<RecipeDetail />} />
+    </Routes>
+  </Router>
+  
   );
 }
 export default App

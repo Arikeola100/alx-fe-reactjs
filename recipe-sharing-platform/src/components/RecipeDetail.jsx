@@ -3,11 +3,13 @@ import recipeData from '../data.json';
 import { useParams } from 'react-router-dom';
 
 const RecipeDetail = () => {
-  const { id } = useParams(); 
-  const [recipe, setRecipe] = useState(null); 
+  const { id } = useParams();
+  const [recipe, setRecipe] = useState(null);
 
   useEffect(() => {
-    const recipeDetails = recipeData.find((recipe) => recipe.id === parseInt(id)); // Parse the id correctly
+    console.log("ID from useParams:", id); // Debugging log
+    const recipeDetails = recipeData.find((recipe) => recipe.id === parseInt(id));
+    console.log("Found Recipe Details:", recipeDetails); // Debugging log
     setRecipe(recipeDetails);
   }, [id]);
 
@@ -31,7 +33,7 @@ const RecipeDetail = () => {
           />
         </div>
 
-        {/* Recipe  */}
+        {/* Recipe */}
         <div className="w-full md:w-1/2 mt-6 md:mt-0">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">{recipe.title}</h1>
           <p className="text-lg text-gray-600 mb-4">{recipe.summary}</p>
@@ -40,7 +42,7 @@ const RecipeDetail = () => {
           <div className="mb-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">Ingredients Needed</h2>
             <ul className="list-disc text-left list-inside text-gray-600 text-lg leading-relaxed">
-              {recipe.ingredients.map((ingredient, index) => (
+              {(recipe.ingredients || []).map((ingredient, index) => (
                 <li key={index}>{ingredient}</li>
               ))}
             </ul>
@@ -50,7 +52,7 @@ const RecipeDetail = () => {
           <div className="mb-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">Instructions</h2>
             <ol className="list-decimal text-left list-inside space-y-4 text-gray-600 text-lg leading-relaxed">
-              {recipe.instructions.map((instruction, index) => (
+              {(recipe.instructions || []).map((instruction, index) => (
                 <li key={index}>{instruction}</li>
               ))}
             </ol>
