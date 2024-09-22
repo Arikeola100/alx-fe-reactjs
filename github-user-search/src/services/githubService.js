@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // GitHub API endpoint to search users with additional filters
-export const fetchUsersByCriteria = async (username = "", location = "", minRepos = "") => {
+export const fetchUserData = async (username = "", location = "", minRepos = "") => {
   let query = [];
 
 
