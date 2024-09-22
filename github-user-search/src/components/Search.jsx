@@ -16,7 +16,7 @@ const Search = () => {
     setUsers([]);
 
     try {
-      const data = await fetchUsersByCriteria(username, location, minRepos);  // Fetch based on new criteria
+      const data = await fetchUserData(username, location, minRepos);  // Fetch based on new criteria
       setUsers(data.items);  // GitHub API Search response is structured with "items"
     } catch (err) {
       setError(true);
