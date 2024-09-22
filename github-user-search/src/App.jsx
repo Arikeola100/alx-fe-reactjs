@@ -4,7 +4,7 @@ import './App.css'
 
 function App() {
   return (
-    <div className="App">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <h1>GitHub User Search</h1>
       <Search />
     </div>
